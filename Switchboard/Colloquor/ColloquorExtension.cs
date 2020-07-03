@@ -10,10 +10,9 @@ namespace Colloquor {
     public partial class ColloquorExtension:SwitchboardExtension {
 
 
-        private static string[] DefaultSettings = {"1","General:Welcome to General:"};
-
-        Dictionary<String,ColloquorChannel> ChannelDictionary;
-        Dictionary<SwitchboardUser,ColloquorChannel> UserChannelDictionary;
+        private static readonly string[] DefaultSettings = {"1","General:Welcome to General:"};
+        readonly Dictionary<String,ColloquorChannel> ChannelDictionary;
+        readonly Dictionary<SwitchboardUser,ColloquorChannel> UserChannelDictionary;
 
         private int PermissionLevel=1;
 
@@ -117,7 +116,27 @@ namespace Colloquor {
         }
 
         public override void Settings() {
-            base.Settings();
+            ColloquorSettings SettingsForm = new ColloquorSettings(PermissionLevel,ChannelDictionary.Values.ToList());
+            if(SettingsForm.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+                PermissionLevel = SettingsForm.PermissionLevel;
+
+                //Rebuild the channel Dictionary
+                ChannelDictionary.Clear();
+                foreach(ColloquorChannel Channel in SettingsForm.AllChannels) {ChannelDictionary.Add(Channel.GetName(),Channel);}
+            }
+
+        }
+
+
+        /// <summary>Saves Colloquor's Settings.</summary>
+        public void SaveSettings() {
+
+            List<String> AllLines = new List<string> {PermissionLevel.ToString()};
+            foreach(ColloquorChannel Channel in ChannelDictionary.Values) {AllLines.Add(Channel.ToString());}
+
+            File.Delete("Colloquor.CFG");
+            File.WriteAllLines("Colloquor.cfg",AllLines);
+
         }
 
     }

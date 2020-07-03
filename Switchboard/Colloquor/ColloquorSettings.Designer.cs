@@ -1,4 +1,4 @@
-﻿namespace SwitchboardServer.Switchboard.Colloquor {
+﻿namespace Colloquor {
     partial class ColloquorSettings {
         /// <summary>
         /// Required designer variable.
@@ -23,11 +23,21 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            "General",
+            "(None)"}, -1);
             this.label1 = new System.Windows.Forms.Label();
             this.PermissionLevelUpDown = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.DeleteChannelBTN = new System.Windows.Forms.Button();
+            this.ModifyChannelBTN = new System.Windows.Forms.Button();
+            this.AddChannelBTN = new System.Windows.Forms.Button();
+            this.ChannelsListview = new System.Windows.Forms.ListView();
+            this.OKBTN = new System.Windows.Forms.Button();
+            this.CANCELBTN = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.PermissionLevelUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -53,6 +63,7 @@
             0,
             0,
             0});
+            this.PermissionLevelUpDown.ValueChanged += new System.EventHandler(this.PermissionLevelUpDown_ValueChanged);
             // 
             // pictureBox1
             // 
@@ -66,28 +77,99 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.DeleteChannelBTN);
+            this.groupBox1.Controls.Add(this.ModifyChannelBTN);
+            this.groupBox1.Controls.Add(this.AddChannelBTN);
+            this.groupBox1.Controls.Add(this.ChannelsListview);
             this.groupBox1.Location = new System.Drawing.Point(12, 134);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(385, 122);
+            this.groupBox1.Size = new System.Drawing.Size(385, 116);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Channels";
             // 
-            // listView1
+            // DeleteChannelBTN
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(6, 19);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.DeleteChannelBTN.Location = new System.Drawing.Point(304, 77);
+            this.DeleteChannelBTN.Name = "DeleteChannelBTN";
+            this.DeleteChannelBTN.Size = new System.Drawing.Size(75, 23);
+            this.DeleteChannelBTN.TabIndex = 3;
+            this.DeleteChannelBTN.Text = "Delete";
+            this.DeleteChannelBTN.UseVisualStyleBackColor = true;
+            this.DeleteChannelBTN.Click += new System.EventHandler(this.DeleteChannelBTN_Click);
+            // 
+            // ModifyChannelBTN
+            // 
+            this.ModifyChannelBTN.Location = new System.Drawing.Point(304, 48);
+            this.ModifyChannelBTN.Name = "ModifyChannelBTN";
+            this.ModifyChannelBTN.Size = new System.Drawing.Size(75, 23);
+            this.ModifyChannelBTN.TabIndex = 2;
+            this.ModifyChannelBTN.Text = "Modify";
+            this.ModifyChannelBTN.UseVisualStyleBackColor = true;
+            this.ModifyChannelBTN.Click += new System.EventHandler(this.ModifyChannelBTN_Click);
+            // 
+            // AddChannelBTN
+            // 
+            this.AddChannelBTN.Location = new System.Drawing.Point(304, 19);
+            this.AddChannelBTN.Name = "AddChannelBTN";
+            this.AddChannelBTN.Size = new System.Drawing.Size(75, 23);
+            this.AddChannelBTN.TabIndex = 1;
+            this.AddChannelBTN.Text = "Add";
+            this.AddChannelBTN.UseVisualStyleBackColor = true;
+            this.AddChannelBTN.Click += new System.EventHandler(this.AddChannelBTN_Click);
+            // 
+            // ChannelsListview
+            // 
+            this.ChannelsListview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.ChannelsListview.HideSelection = false;
+            this.ChannelsListview.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem6});
+            this.ChannelsListview.Location = new System.Drawing.Point(6, 19);
+            this.ChannelsListview.Name = "ChannelsListview";
+            this.ChannelsListview.Size = new System.Drawing.Size(292, 81);
+            this.ChannelsListview.TabIndex = 0;
+            this.ChannelsListview.UseCompatibleStateImageBehavior = false;
+            this.ChannelsListview.View = System.Windows.Forms.View.Details;
+            // 
+            // OKBTN
+            // 
+            this.OKBTN.Location = new System.Drawing.Point(235, 256);
+            this.OKBTN.Name = "OKBTN";
+            this.OKBTN.Size = new System.Drawing.Size(75, 23);
+            this.OKBTN.TabIndex = 4;
+            this.OKBTN.Text = "OK";
+            this.OKBTN.UseVisualStyleBackColor = true;
+            this.OKBTN.Click += new System.EventHandler(this.OKBTN_Click);
+            // 
+            // CANCELBTN
+            // 
+            this.CANCELBTN.Location = new System.Drawing.Point(322, 256);
+            this.CANCELBTN.Name = "CANCELBTN";
+            this.CANCELBTN.Size = new System.Drawing.Size(75, 23);
+            this.CANCELBTN.TabIndex = 5;
+            this.CANCELBTN.Text = "Cancel";
+            this.CANCELBTN.UseVisualStyleBackColor = true;
+            this.CANCELBTN.Click += new System.EventHandler(this.CANCELBTN_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 153;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Password";
+            this.columnHeader2.Width = 108;
             // 
             // ColloquorSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 310);
+            this.ClientSize = new System.Drawing.Size(409, 291);
+            this.Controls.Add(this.CANCELBTN);
+            this.Controls.Add(this.OKBTN);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PermissionLevelUpDown);
@@ -110,6 +192,13 @@
         private System.Windows.Forms.NumericUpDown PermissionLevelUpDown;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView ChannelsListview;
+        private System.Windows.Forms.Button DeleteChannelBTN;
+        private System.Windows.Forms.Button ModifyChannelBTN;
+        private System.Windows.Forms.Button AddChannelBTN;
+        private System.Windows.Forms.Button OKBTN;
+        private System.Windows.Forms.Button CANCELBTN;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

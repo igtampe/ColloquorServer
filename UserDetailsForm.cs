@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Switchboard;
 
 namespace SwitchboardServer {
     public partial class UserDetailsForm:Form {

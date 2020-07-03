@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Switchboard.ico</ApplicationIcon>
+    <ApplicationIcon>Colloquor %28Super New%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -77,6 +77,12 @@
     <Compile Include="Switchboard\Colloquor\ColloquorSettings.Designer.cs">
       <DependentUpon>ColloquorSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Switchboard\Colloquor\ColloquorChannelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Switchboard\Colloquor\ColloquorChannelForm.Designer.cs">
+      <DependentUpon>ColloquorChannelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Switchboard\SwitchboardConfiguration.cs" />
     <Compile Include="Switchboard\SwitchboardConnection.cs" />
     <Compile Include="Switchboard\SwitchboardExtension.cs" />
@@ -119,6 +125,9 @@
     <EmbeddedResource Include="ServerSettingsForm.resx">
       <DependentUpon>ServerSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Switchboard\Colloquor\ColloquorChannelForm.resx">
+      <DependentUpon>ColloquorChannelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Switchboard\Colloquor\ColloquorSettings.resx">
       <DependentUpon>ColloquorSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Colloquor %28Banner%29.png" />
+    <Content Include="Colloquor %28Super New%29.ico" />
     <Content Include="Switchboard.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

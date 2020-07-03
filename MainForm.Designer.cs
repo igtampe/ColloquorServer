@@ -92,9 +92,9 @@
             this.TitleLabel.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleLabel.Location = new System.Drawing.Point(12, 17);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(273, 32);
+            this.TitleLabel.Size = new System.Drawing.Size(240, 32);
             this.TitleLabel.TabIndex = 2;
-            this.TitleLabel.Text = "Switchboard Server";
+            this.TitleLabel.Text = "Colloquor Server";
             // 
             // StatusLabel
             // 
@@ -159,7 +159,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Switchboard Server";
+            this.Text = "Colloquor Server";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_Close);
             this.ResumeLayout(false);
             this.PerformLayout();

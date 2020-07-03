@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Colloquor;
+using System;
 using System.Collections.Generic;
 
 namespace Switchboard {
@@ -34,6 +35,8 @@ namespace Switchboard {
 
             //Here add/initialize your server extensions.
             //By default, the server will always have the DummyExtension, and the Switchboard Main Extension.
+
+            List.Add(new ColloquorExtension()); //woop there it is.
 
             return List;
 
