@@ -100,7 +100,7 @@ namespace Colloquor {
                 case "SEND":
                     if(!UserChannelDictionary.ContainsKey(User)) { return "NOT CONNECTED"; }
                     UserChannelDictionary[User].ReceiveMessage("["+User.GetUsername() + "] " + Command.Remove(0,5)); //Remove "SEND "
-                    return UserChannelDictionary[User].GetLastMessage();
+                    return UserChannelDictionary[User].GetWelcome() + "\n\n" + UserChannelDictionary[User].GetLastMessage();
                 case "REQUEST":
                     if(!UserChannelDictionary.ContainsKey(User)) { return "NOT CONNECTED"; }
                     return UserChannelDictionary[User].GetLastMessage();
