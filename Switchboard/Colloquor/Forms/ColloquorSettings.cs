@@ -37,15 +37,47 @@ namespace Colloquor {
         }
 
         private void AddChannelBTN_Click(object sender,EventArgs e) {
-            //TODO CHANNELFORM new
+            ColloquorChannelForm Form = new ColloquorChannelForm();
+            if(Form.ShowDialog() == DialogResult.OK) {
+
+                //Make sure there is no repeated channel.
+                foreach(ColloquorChannel Channel in AllChannels) {
+                    if(Channel.GetName() == Form.NameTXB.Text) {
+                        MessageBox.Show("Channel with that name already exists!","n o",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+                //now let's add it
+                if(Form.EnablePass.Checked) { AllChannels.Add(new ColloquorChannel(Form.NameTXB.Text,Form.WelcomeTXB.Text,Form.PasswordTXB.Text)); } 
+                else { AllChannels.Add(new ColloquorChannel(Form.NameTXB.Text,Form.WelcomeTXB.Text,"")); }
+
+            }
 
         }
 
         private void ModifyChannelBTN_Click(object sender,EventArgs e) {
             int Index = GetSelectedIndex(ChannelsListview);
             if(Index == -2) { return; }
-            
-            //TODO: CHANNELFORM with the specified channel.
+
+            ColloquorChannelForm Form = new ColloquorChannelForm(AllChannels[Index]);
+            if(Form.ShowDialog() == DialogResult.OK) {
+
+                //Make sure there is no repeated channel.
+                for(int i = 0; i < AllChannels.Count; i++) {
+                    if((AllChannels[i].GetName() == Form.NameTXB.Text) && i!=Index) {
+                        MessageBox.Show("Channel with that name already exists!","n o",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+                //now let's update todo
+                AllChannels[Index].SetName(Form.NameTXB.Text);
+                AllChannels[Index].SetWelcome(Form.WelcomeTXB.Text);
+                if(Form.EnablePass.Checked) { AllChannels[Index].SetPassword(Form.PasswordTXB.Text); } else {AllChannels[Index].SetPassword("");}
+
+
+            }
 
         }
 

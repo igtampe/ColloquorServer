@@ -71,16 +71,16 @@
     </Compile>
     <Compile Include="Switchboard\Colloquor\ColloquorChannel.cs" />
     <Compile Include="Switchboard\Colloquor\ColloquorExtension.cs" />
-    <Compile Include="Switchboard\Colloquor\ColloquorSettings.cs">
+    <Compile Include="Switchboard\Colloquor\Forms\ColloquorSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Switchboard\Colloquor\ColloquorSettings.Designer.cs">
+    <Compile Include="Switchboard\Colloquor\Forms\ColloquorSettings.Designer.cs">
       <DependentUpon>ColloquorSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Switchboard\Colloquor\ColloquorChannelForm.cs">
+    <Compile Include="Switchboard\Colloquor\Forms\ColloquorChannelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Switchboard\Colloquor\ColloquorChannelForm.Designer.cs">
+    <Compile Include="Switchboard\Colloquor\Forms\ColloquorChannelForm.Designer.cs">
       <DependentUpon>ColloquorChannelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Switchboard\SwitchboardConfiguration.cs" />
@@ -125,10 +125,10 @@
     <EmbeddedResource Include="ServerSettingsForm.resx">
       <DependentUpon>ServerSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Switchboard\Colloquor\ColloquorChannelForm.resx">
+    <EmbeddedResource Include="Switchboard\Colloquor\Forms\ColloquorChannelForm.resx">
       <DependentUpon>ColloquorChannelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Switchboard\Colloquor\ColloquorSettings.resx">
+    <EmbeddedResource Include="Switchboard\Colloquor\Forms\ColloquorSettings.resx">
       <DependentUpon>ColloquorSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TinyForms\NumUpDownForm.resx">
