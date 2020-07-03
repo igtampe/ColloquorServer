@@ -69,6 +69,14 @@
     <Compile Include="ServerSettingsForm.Designer.cs">
       <DependentUpon>ServerSettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Switchboard\Colloquor\ColloquorChannel.cs" />
+    <Compile Include="Switchboard\Colloquor\ColloquorExtension.cs" />
+    <Compile Include="Switchboard\Colloquor\ColloquorSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Switchboard\Colloquor\ColloquorSettings.Designer.cs">
+      <DependentUpon>ColloquorSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Switchboard\SwitchboardConfiguration.cs" />
     <Compile Include="Switchboard\SwitchboardConnection.cs" />
     <Compile Include="Switchboard\SwitchboardExtension.cs" />
@@ -111,6 +119,9 @@
     <EmbeddedResource Include="ServerSettingsForm.resx">
       <DependentUpon>ServerSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Switchboard\Colloquor\ColloquorSettings.resx">
+      <DependentUpon>ColloquorSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TinyForms\NumUpDownForm.resx">
       <DependentUpon>NumUpDownForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +148,7 @@
     <None Include="Resources\Switchboard %28Wide%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Colloquor %28Banner%29.png" />
     <Content Include="Switchboard.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
