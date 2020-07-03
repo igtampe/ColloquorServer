@@ -57,7 +57,7 @@ namespace Colloquor {
             Command = Command.Remove(0,6); //Remove "CQUOR "
             String[] CommandSplit = Command.Split(' ');
 
-            switch(CommandSplit[0]) {
+            switch(CommandSplit[0].ToUpper()) {
                 case "JOIN":
 
                     //First let's make sure the user isn't already in a channel
@@ -102,9 +102,11 @@ namespace Colloquor {
                     UserChannelDictionary[User].ReceiveMessage("["+User.GetUsername() + "] " + Command.Remove(0,5)); //Remove "SEND "
                     return UserChannelDictionary[User].GetLastMessage();
                 case "REQUEST":
+                    if(!UserChannelDictionary.ContainsKey(User)) { return "NOT CONNECTED"; }
                     return UserChannelDictionary[User].GetLastMessage();
                 case "LEAVE":
                     if(!UserChannelDictionary.ContainsKey(User)) { return "NOT CONNECTED"; }
+                    UserChannelDictionary[User].ReceiveMessage(User.GetUsername() + " left the channel");
                     UserChannelDictionary.Remove(User);
                     return "OK";
                 case "PING":
