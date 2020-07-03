@@ -72,7 +72,7 @@ namespace Colloquor {
                         //Now that we know that the channel exists, let's add the user.
                         UserChannelDictionary.Add(User,ChannelDictionary[CommandSplit[1]]);
                         UserChannelDictionary[User].ReceiveMessage(User.GetUsername() + " joined the channel!");
-                        return UserChannelDictionary[User].GetLastMessage();
+                        return UserChannelDictionary[User].GetWelcome() + "\n\n";
 
 
                     } else if(CommandSplit.Length == 3) {
@@ -84,7 +84,7 @@ namespace Colloquor {
                         //Now that we know that the channel exists, let's add the user.
                         UserChannelDictionary.Add(User,ChannelDictionary[CommandSplit[1]]);
                         UserChannelDictionary[User].ReceiveMessage(User.GetUsername() + " joined the channel!");
-                        return UserChannelDictionary[User].GetLastMessage();
+                        return UserChannelDictionary[User].GetWelcome() + "\n\n";
 
 
                     } else { return "ERR"; }
@@ -100,7 +100,7 @@ namespace Colloquor {
                 case "SEND":
                     if(!UserChannelDictionary.ContainsKey(User)) { return "NOT CONNECTED"; }
                     UserChannelDictionary[User].ReceiveMessage("["+User.GetUsername() + "] " + Command.Remove(0,5)); //Remove "SEND "
-                    return UserChannelDictionary[User].GetWelcome() + "\n\n" + UserChannelDictionary[User].GetLastMessage();
+                    return UserChannelDictionary[User].GetLastMessage();
                 case "REQUEST":
                     if(!UserChannelDictionary.ContainsKey(User)) { return "NOT CONNECTED"; }
                     return UserChannelDictionary[User].GetLastMessage();
