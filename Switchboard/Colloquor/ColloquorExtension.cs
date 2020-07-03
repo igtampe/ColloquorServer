@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Switchboard;
 
 namespace Colloquor {
@@ -16,7 +14,7 @@ namespace Colloquor {
 
         private int PermissionLevel=1;
 
-        public ColloquorExtension():base("Colloquor","Version 1.0"){
+        public ColloquorExtension():base("Colloquor","1.0"){
 
             if(!File.Exists("Colloquor.cfg")) { File.WriteAllLines("Colloquor.cfg",DefaultSettings); }
 
@@ -27,7 +25,9 @@ namespace Colloquor {
                 String[] AllLines = File.ReadAllLines("Colloquor.CFG");
                 foreach(String Line in AllLines) {
                     String[] LineSplit = Line.Split(':');
-                    if(LineSplit.Length == 1) { PermissionLevel = int.Parse(Line); } 
+                    if(LineSplit.Length == 1) { 
+                        PermissionLevel = int.Parse(Line); 
+                    }
                     else if (LineSplit.Length == 3) { ChannelDictionary.Add(LineSplit[0],new ColloquorChannel(LineSplit[0],LineSplit[1],LineSplit[2])); }
                 }
             
@@ -123,6 +123,7 @@ namespace Colloquor {
                 //Rebuild the channel Dictionary
                 ChannelDictionary.Clear();
                 foreach(ColloquorChannel Channel in SettingsForm.AllChannels) {ChannelDictionary.Add(Channel.GetName(),Channel);}
+                SaveSettings();
             }
 
         }

@@ -15,6 +15,7 @@ namespace Colloquor {
         public ColloquorSettings(int PermissionLevel, List<ColloquorChannel> AllChannels) {
             InitializeComponent();
             this.PermissionLevel = PermissionLevel;
+            PermissionLevelUpDown.Value = PermissionLevel;
             this.AllChannels = AllChannels;
 
             ChannelsListview.MultiSelect = false;
@@ -52,6 +53,7 @@ namespace Colloquor {
                 if(Form.EnablePass.Checked) { AllChannels.Add(new ColloquorChannel(Form.NameTXB.Text,Form.WelcomeTXB.Text,Form.PasswordTXB.Text)); } 
                 else { AllChannels.Add(new ColloquorChannel(Form.NameTXB.Text,Form.WelcomeTXB.Text,"")); }
 
+                UpdateListview();
             }
 
         }
@@ -76,6 +78,8 @@ namespace Colloquor {
                 AllChannels[Index].SetWelcome(Form.WelcomeTXB.Text);
                 if(Form.EnablePass.Checked) { AllChannels[Index].SetPassword(Form.PasswordTXB.Text); } else {AllChannels[Index].SetPassword("");}
 
+                UpdateListview();
+
 
             }
 
@@ -84,10 +88,20 @@ namespace Colloquor {
         private void DeleteChannelBTN_Click(object sender,EventArgs e) {
             int Index = GetSelectedIndex(ChannelsListview);
             if(Index == -2) {return;}
-            if(AreYouSure("Are you sure you want to delete this channel?")) {AllChannels.RemoveAt(Index);}
+            if(AreYouSure("Are you sure you want to delete this channel?")) {
+                AllChannels.RemoveAt(Index);
+                UpdateListview();
+            }
         }
 
-        private void PermissionLevelUpDown_ValueChanged(object sender,EventArgs e) {PermissionLevel = Decimal.ToInt32(PermissionLevelUpDown.Value);}
+        private void PermissionLevelUpDown_ValueChanged(object sender,EventArgs e) {
+            PermissionLevel = Decimal.ToInt32(PermissionLevelUpDown.Value);
+            if(PermissionLevel == 0) {
+                MessageBox.Show("Colloquor doesn't work well with anonymous users. \n\n" +
+                    "Extensions only see users, not connections, so only one anonymous user would be allowed at any time.\n\n" +
+                    "Probably use a permission level of at least one!","Warning!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
 
         //------------------------------[Functions]------------------------------
 

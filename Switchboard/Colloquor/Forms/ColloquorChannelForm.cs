@@ -9,6 +9,7 @@ namespace Colloquor {
             NameTXB.Text = Channel.GetName();
             PasswordTXB.Text = Channel.GetPassword();
             EnablePass.Checked = Channel.HasPassword();
+            PasswordTXB.Enabled = EnablePass.Checked;
             WelcomeTXB.Text = Channel.GetWelcome();
         }
 

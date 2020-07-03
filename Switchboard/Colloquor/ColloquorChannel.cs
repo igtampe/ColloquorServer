@@ -5,7 +5,7 @@ namespace Colloquor {
 
         //Wow look at me I'm declaring variables like this now wooooooooooooooo
         private String Name, Welcome, Password, LastMessage;
-
+        
         public ColloquorChannel(String Name,  String Welcome,String Password) {
             this.Name = Name;
             this.Welcome = Welcome;
@@ -33,7 +33,7 @@ namespace Colloquor {
 
         /// <summary>Specifies whether or not this channel has a password.</summary>
         /// <returns>True if this channel has a password, false otherwise.</returns>
-        public bool HasPassword() { return String.IsNullOrWhiteSpace(Password); }
+        public bool HasPassword() { return !String.IsNullOrWhiteSpace(Password); }
 
         /// <summary>ToString mostly to be able to save channels</summary>
         /// <returns>NAME,WelcomeMessage,Password</returns>
