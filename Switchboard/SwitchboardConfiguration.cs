@@ -8,10 +8,10 @@ namespace Switchboard {
     public static class SwitchboardConfiguration {
 
         /// <summary>Name of this server</summary>
-        public const String ServerName = "SWITCHBOARD DEFAULT SERVER";
+        public const String ServerName = "Colloquor Server";
 
         /// <summary>Version of this server</summary>
-        public const String ServerVersion = "BETA 1.0";
+        public const String ServerVersion = "Version 1.0";
 
         /// <summary>Default IP for this server</summary>
         public const String DefaultIP = "127.0.0.1";
@@ -20,13 +20,13 @@ namespace Switchboard {
         public const int DefaultPort = 909;
 
         /// <summary>Allow Anonymous users by default or no</summary>
-        public const bool AllowAnonymousDefault = true;
+        public const bool AllowAnonymousDefault = false;
 
         /// <summary>Allow multiple logins wit the same account or no</summary>
-        public const bool MultiLoginDefault = true;
+        public const bool MultiLoginDefault = false;
 
         /// <summary>Default Welcome Message</summary>
-        public const String DefaultWelcome = "H o l a";
+        public const String DefaultWelcome = "Welcome to this Colloquor server!";
 
         /// <summary>Gets a list of the extensions from this server</summary>
         public static List<SwitchboardExtension> ServerExtensions() {
