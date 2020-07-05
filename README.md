@@ -1,6 +1,7 @@
 ![ColloquorBanner](https://raw.githubusercontent.com/igtampe/ColloquorClient/master/Resources/Colloquor%20(Banner).png)
 Colloquor is a basic chat application, which allows users to connect to "channels" and communicate with each other. I wrote it mostly as an example of what Switchboard can do. Colloquor lives entirely within the cool little Colloquor extension for Switchboard. This server includes it. 
 
+![Colloquor4Picture](https://raw.githubusercontent.com/igtampe/ColloquorClient/master/Resources/Colloquor4.png)
 See the client, and the histroy of Colloquor over here: https://github.com/igtampe/ColloquorClient
 
 ## How it works
